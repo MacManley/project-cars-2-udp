@@ -31,7 +31,7 @@ The following data types are used in the structures:
 
 Each packet has the following header:
 
-Size: 29 bytes
+Size: 12 bytes
 
 ```c#
 struct PacketBase
