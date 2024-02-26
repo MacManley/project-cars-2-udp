@@ -133,7 +133,7 @@ uint8 sAeroDamage;
 uint8 sEngineDamage;
 uint32 sJoyPad;
 uint8 sDPad;
-char sTyreCompound[4][TYRE_NAME_LENGTH_MAX];
+char sTyreCompound[4][40];
 float sTurboBoostPressure;
 float sFullPosition[3];
 uint8 sBrakeBias;
@@ -286,12 +286,16 @@ GameStateData sGameStateData;
 
 The time stats packet provides information about Vehicle Class Names.
 
+Frequency: ??
+
+Sent: ??
+
 Size: 1452 bytes
 
 ```c#
 struct ClassInfo {
 uint32 sClassIndex;
-char sCName[CLASS_NAME_LENGTH_MAX];
+char sCName[20];
 };
 
 struct PacketVehicleClassNamesData {
@@ -346,7 +350,7 @@ Size: 1164 bytes
 struct VehicleInfo {
 uint16 sIndex;
 uint32 sClass;
-char sVName[VEHICLE_NAME_LENGTH_MAX];
+char sVName[64];
 short paddingC;
 };
 
