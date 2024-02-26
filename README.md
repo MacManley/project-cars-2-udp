@@ -198,7 +198,7 @@ Size: 1136 bytes
 ```c#
 struct ParticipantsData {
 uint32 sParticipantsChangedTimestamp;
-char sName[PARTICIPANT_NAME_LENGTH_MAX];
+char sName[64];
 uint32 sNationality[16];
 uint16 sIndex[16];
 };
