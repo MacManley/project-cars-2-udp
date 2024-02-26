@@ -1,4 +1,4 @@
-// File: PacketSessionData.cpp
+// File: PacketTimingStatsData.cpp
 #include "PacketTimingStatsData.h"
 #include <inttypes.h>
 #include <string.h>

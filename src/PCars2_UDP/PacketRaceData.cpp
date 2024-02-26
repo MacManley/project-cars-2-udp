@@ -1,4 +1,4 @@
-// File: PacketMotionData.cpp
+// File: PacketRaceData.cpp
 #include "PacketRaceData.h"
 #include <string.h>
 
