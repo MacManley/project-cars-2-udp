@@ -12,9 +12,9 @@
 #pragma pack(push, 1)
 
 struct VehicleInfo {
-uint16_t sIndex;
-uint32_t sClass;
-char sVName[VEHICLE_NAME_LENGTH_MAX];
+uint16_t sIndex; // Index
+uint32_t sClass; // Vehicle class
+char sVName[VEHICLE_NAME_LENGTH_MAX]; // Vehicle name
 short paddingC;
 };
 

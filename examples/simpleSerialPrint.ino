@@ -14,7 +14,7 @@ void startWiFi();
 IPAddress ip();
 WiFiUDP Udp;
 
-unsigned int localPort = 5606; // Port that is used in game, default is 20777
+unsigned int localPort = 5606; // Port that is used in game, 5606
 
 PCars2_Parser* parser;
 

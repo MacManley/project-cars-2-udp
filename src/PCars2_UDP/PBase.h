@@ -8,12 +8,12 @@
 
 struct PacketBase
 {
-    uint32_t mPacketNumber;
-    uint32_t mCategoryPacketNumber;
-    uint8_t mPartialPacketIndex;
-    uint8_t mPartialPacketNumber;
-    uint8_t mPacketType;
-    uint8_t mPacketVersion;
+    uint32_t mPacketNumber; //Number reflecting how many packets have been sent while game is running
+    uint32_t mCategoryPacketNumber; //Number reflecting how many packets have been sent while game is running from a specific category
+    uint8_t mPartialPacketIndex; // If the data from this class has been sent in several packets, the index number of them packets
+    uint8_t mPartialPacketNumber; // If the data from this class has been sent in several packets, the amount of the packets
+    uint8_t mPacketType; // Which type of packet it is
+    uint8_t mPacketVersion; // What version of the packet it is
 };
 
 using namespace std;

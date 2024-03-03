@@ -10,8 +10,8 @@
 #pragma pack(push, 1)
 
 struct ClassInfo {
-    uint32_t sClassIndex;
-    char sCName[CLASS_NAME_LENGTH_MAX];
+    uint32_t sClassIndex; // Index of class
+    char sCName[CLASS_NAME_LENGTH_MAX]; // Class name
 };
 
 class PacketVehicleClassNamesData: public PBase {

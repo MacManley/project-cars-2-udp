@@ -6,6 +6,8 @@
 
 using namespace std;
 
+const int BASE_BUFFER_SIZE = 12;
+
 PBase::PBase()
 {
     
@@ -17,7 +19,7 @@ PBase::~PBase()
 
 void PBase::push(char *receiveBuffer)
 {
-    memmove(&m_base, receiveBuffer, 12);
+    memmove(&m_base, receiveBuffer, BASE_BUFFER_SIZE);
 }
 
 uint32_t PBase::mPacketNumber(void) {

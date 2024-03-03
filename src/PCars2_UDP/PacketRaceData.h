@@ -9,21 +9,21 @@
 #pragma pack(push, 1)
 
 struct RaceData {
-float sWorldFastestLapTime;
-float sPersonalFastestLapTime;
-float sPersonalFastestSector1Time;
-float sPersonalFastestSector2Time;
-float sPersonalFastestSector3Time;
-float sWorldFastestSector1Time;
-float sWorldFastestSector2Time;
-float sWorldFastestSector3Time;
-float sTrackLength;
-char sTrackLocation[TRACKNAME_LENGTH_MAX];
-char sTrackVariation[TRACKNAME_LENGTH_MAX];
-char sTranslatedTrackLocation[TRACKNAME_LENGTH_MAX];
-char sTranslatedTrackVariation[TRACKNAME_LENGTH_MAX];
-uint16_t slapsTimeInEvent;
-int8_t sEnforcedPitStopLap;
+float sWorldFastestLapTime; // Fastest global laptime (FORMAT: SECONDS.MILLISECONDS)
+float sPersonalFastestLapTime;  // Fastest personal laptime (FORMAT: SECONDS.MILLISECONDS)
+float sPersonalFastestSector1Time; // Fastest personal sector 1 time (FORMAT: SECONDS.MILLISECONDS)
+float sPersonalFastestSector2Time; // Fastest personal sector 2 time (FORMAT: SECONDS.MILLISECONDS)
+float sPersonalFastestSector3Time; // Fastest personal sector 3 time (FORMAT: SECONDS.MILLISECONDS)
+float sWorldFastestSector1Time; // Fastest global sector 1 time (FORMAT: SECONDS.MILLISECONDS)
+float sWorldFastestSector2Time; // Fastest global sector 2 time (FORMAT: SECONDS.MILLISECONDS)
+float sWorldFastestSector3Time; // Fastest global sector 3 time (FORMAT: SECONDS.MILLISECONDS)
+float sTrackLength; // Track length in meters
+char sTrackLocation[TRACKNAME_LENGTH_MAX]; // Track location
+char sTrackVariation[TRACKNAME_LENGTH_MAX]; // Track variation
+char sTranslatedTrackLocation[TRACKNAME_LENGTH_MAX]; // Translated track location
+char sTranslatedTrackVariation[TRACKNAME_LENGTH_MAX]; // Translated track variation
+uint16_t slapsTimeInEvent; // Contains lap number for lap based session or quantized session duration (number of 5mins) for timed sessions, the top bit is 1 for timed sessions
+int8_t sEnforcedPitStopLap; // Mandatory pit stop lap
 uint8_t paddingA;
 };
 
