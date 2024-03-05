@@ -16,7 +16,7 @@ class PCars2_Parser
 public:
     PCars2_Parser();
     virtual ~PCars2_Parser();
-    void push(char * recieveBuffer);
+    void push(char * receiveBuffer);
     PacketTelemetryData* packetTelemetryData(void);
     PacketRaceData* packetRaceData(void);
     PacketParticipantsData* packetParticipantData(void);

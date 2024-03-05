@@ -37,29 +37,29 @@ PCars2_Parser::~PCars2_Parser()
     delete packetParticipantVehicleNamesData_;
 }
 
-void PCars2_Parser::push(char * recieveBuffer)
+void PCars2_Parser::push(char * receiveBuffer)
 {
     PBase* P = new PBase();
-    P->push(recieveBuffer);
+    P->push(receiveBuffer);
     switch (P->mPacketType())
     {
-        case 0: packetTelemetryData_->push(recieveBuffer);
+        case 0: packetTelemetryData_->push(receiveBuffer);
             break;
-        case 1: packetRaceData_->push(recieveBuffer);
+        case 1: packetRaceData_->push(receiveBuffer);
             break;
-        case 2: packetParticipantData_->push(recieveBuffer);
+        case 2: packetParticipantData_->push(receiveBuffer);
             break;
-        case 3: packetTimingsData_->push(recieveBuffer);
+        case 3: packetTimingsData_->push(receiveBuffer);
             break;
-        case 4: packetGameStateData_->push(recieveBuffer);
+        case 4: packetGameStateData_->push(receiveBuffer);
             break;
-        /*case 5: packetWeatherStateData_->push(recieveBuffer);
+        /*case 5: packetWeatherStateData_->push(receiveBuffer);
             break;*/
-        case 6: packetVehicleClassNamesData_->push(recieveBuffer);
+        case 6: packetVehicleClassNamesData_->push(receiveBuffer);
             break;
-        case 7: packetTimeStatsData_->push(recieveBuffer);
+        case 7: packetTimeStatsData_->push(receiveBuffer);
             break;
-        case 8: packetParticipantVehicleNamesData_->push(recieveBuffer);
+        case 8: packetParticipantVehicleNamesData_->push(receiveBuffer);
             break;
         default:;
     }
