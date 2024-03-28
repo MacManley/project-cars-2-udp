@@ -1,6 +1,6 @@
 // File: PacketTelemetryData.cpp
 #include "PacketTelemetryData.h"
-#include <string.h>
+#include <cstring>
 
 const int TELEMETRY_BUFFER_SIZE = 559;
 
@@ -13,7 +13,7 @@ PacketTelemetryData::~PacketTelemetryData()
 
 void PacketTelemetryData::push(char *receiveBuffer)
 {
-    memmove(PBase::pointerToFirstElement(), receiveBuffer, TELEMETRY_BUFFER_SIZE);
+    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, TELEMETRY_BUFFER_SIZE);
 }
 
 TelemetryData PacketTelemetryData::sTelemetryData()

@@ -1,6 +1,6 @@
 // File: PacketGameStateData.cpp
 #include "PacketGameStateData.h"
-#include <string.h>
+#include <cstring>
 
 const int GAMESTATEDATA_BUFFER_SIZE = 24;
 
@@ -13,7 +13,7 @@ PacketGameStateData::~PacketGameStateData()
 
 void PacketGameStateData::push(char *receiveBuffer)
 {
-    memmove(PBase::pointerToFirstElement(), receiveBuffer, GAMESTATEDATA_BUFFER_SIZE);
+    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, GAMESTATEDATA_BUFFER_SIZE);
 }
 
 GameStateData PacketGameStateData::sGameStateData()

@@ -2,7 +2,7 @@
 #include "PBase.h"
 #include <inttypes.h>
 #include <cstdio>
-#include <string.h>
+#include <cstring>
 
 using namespace std;
 
@@ -19,7 +19,7 @@ PBase::~PBase()
 
 void PBase::push(char *receiveBuffer)
 {
-    memmove(&m_base, receiveBuffer, BASE_BUFFER_SIZE);
+    std::memcpy(&m_base, receiveBuffer, BASE_BUFFER_SIZE);
 }
 
 uint32_t PBase::mPacketNumber(void) {

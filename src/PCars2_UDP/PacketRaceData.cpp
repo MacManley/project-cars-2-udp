@@ -1,6 +1,6 @@
 // File: PacketRaceData.cpp
 #include "PacketRaceData.h"
-#include <string.h>
+#include <cstring>
 
 const int RACEDATA_BUFFER_SIZE = 308;
 
@@ -13,7 +13,7 @@ PacketRaceData::~PacketRaceData()
 
 void PacketRaceData::push(char *receiveBuffer)
 {
-    memmove(PBase::pointerToFirstElement(), receiveBuffer, RACEDATA_BUFFER_SIZE);
+    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, RACEDATA_BUFFER_SIZE);
 }
 
 RaceData PacketRaceData::sRaceData()

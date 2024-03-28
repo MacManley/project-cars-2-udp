@@ -1,7 +1,7 @@
 // File: PacketTimingsData.cpp
 #include "PacketTimingsData.h"
 #include <inttypes.h>
-#include <string.h>
+#include <cstring>
 
 const int TIMINGS_BUFFER_SIZE = 1063;
 
@@ -14,7 +14,7 @@ PacketTimingsData::~PacketTimingsData(void)
 
 void PacketTimingsData::push(char *receiveBuffer)
 {
-    memmove(PBase::pointerToFirstElement(), receiveBuffer, TIMINGS_BUFFER_SIZE);
+    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, TIMINGS_BUFFER_SIZE);
 }
 
 int8_t PacketTimingsData::sNumParticipants(void) 
@@ -51,7 +51,7 @@ ParticipantsInfo PacketTimingsData::sParticipantInfo(int index)
 {
         if (index >= 0 && index < 32)
             return sParticipantsInfo_[index];
-        else return{0};
+        else return ParticipantsInfo{};
 }
 
 uint16_t PacketTimingsData::sLocalParticipantIndex(void) 
