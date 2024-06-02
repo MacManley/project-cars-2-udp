@@ -14,7 +14,7 @@ PacketParticipantVehicleNamesData::~PacketParticipantVehicleNamesData(void)
 
 void PacketParticipantVehicleNamesData::push(char *receiveBuffer)
 {
-    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, PARTICIPANTVEHICLENAMES_BUFFER_SIZE);
+    std::memcpy(PBase::firstElementPointer(), receiveBuffer, PARTICIPANTVEHICLENAMES_BUFFER_SIZE);
 }
 
 VehicleInfo PacketParticipantVehicleNamesData::sVehicleInfo(int index)

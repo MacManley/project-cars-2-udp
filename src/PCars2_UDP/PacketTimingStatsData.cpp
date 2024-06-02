@@ -14,7 +14,7 @@ PacketTimeStatsData::~PacketTimeStatsData(void)
 
 void PacketTimeStatsData::push(char *receiveBuffer)
 {
-    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, TIMINGSTATS_BUFFER_SIZE);
+    std::memcpy(PBase::firstElementPointer(), receiveBuffer, TIMINGSTATS_BUFFER_SIZE);
 }
 
 uint32_t PacketTimeStatsData::sParticipantsChangedTimeStamp1(void) 

@@ -13,7 +13,7 @@ PacketGameStateData::~PacketGameStateData()
 
 void PacketGameStateData::push(char *receiveBuffer)
 {
-    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, GAMESTATEDATA_BUFFER_SIZE);
+    std::memcpy(PBase::firstElementPointer(), receiveBuffer, GAMESTATEDATA_BUFFER_SIZE);
 }
 
 GameStateData PacketGameStateData::sGameStateData()

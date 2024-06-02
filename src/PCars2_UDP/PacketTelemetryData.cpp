@@ -13,7 +13,7 @@ PacketTelemetryData::~PacketTelemetryData()
 
 void PacketTelemetryData::push(char *receiveBuffer)
 {
-    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, TELEMETRY_BUFFER_SIZE);
+    std::memcpy(PBase::firstElementPointer(), receiveBuffer, TELEMETRY_BUFFER_SIZE);
 }
 
 TelemetryData PacketTelemetryData::sTelemetryData()

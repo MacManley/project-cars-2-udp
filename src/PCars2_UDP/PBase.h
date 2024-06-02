@@ -33,7 +33,7 @@ public:
 
 protected:
     PacketBase m_base;
-    uint32_t* pointerToFirstElement();
+    uint32_t* firstElementPointer();
 };
 
 #pragma pack(pop)

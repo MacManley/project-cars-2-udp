@@ -13,7 +13,7 @@ PacketRaceData::~PacketRaceData()
 
 void PacketRaceData::push(char *receiveBuffer)
 {
-    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, RACEDATA_BUFFER_SIZE);
+    std::memcpy(PBase::firstElementPointer(), receiveBuffer, RACEDATA_BUFFER_SIZE);
 }
 
 RaceData PacketRaceData::sRaceData()

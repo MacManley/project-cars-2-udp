@@ -14,7 +14,7 @@ PacketTimingsData::~PacketTimingsData(void)
 
 void PacketTimingsData::push(char *receiveBuffer)
 {
-    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, TIMINGS_BUFFER_SIZE);
+    std::memcpy(PBase::firstElementPointer(), receiveBuffer, TIMINGS_BUFFER_SIZE);
 }
 
 int8_t PacketTimingsData::sNumParticipants(void) 

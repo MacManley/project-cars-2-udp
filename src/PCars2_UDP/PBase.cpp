@@ -46,7 +46,7 @@ uint8_t PBase::mPacketVersion(void) {
     return m_base.mPacketVersion;
 }
 
-uint32_t* PBase::pointerToFirstElement(void)
+uint32_t* PBase::firstElementPointer(void)
 {
     return &m_base.mPacketNumber;
 }

@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "PCars2_UDP.h"
+#include <WiFiUdp.h>
 #include "PacketParticipantsData.h"
 #include "PacketGameStateData.h"
 #include "PacketParticipantVehiclesNames.h"
@@ -10,6 +11,10 @@
 #include "PacketTimingsData.h"
 #include "PacketTimingStatsData.h"
 #include "PacketVehicleClassNamesData.h"
+
+constexpr unsigned int localPort = 5606;
+
+WiFiUDP Udp;
 
 PCars2_Parser::PCars2_Parser()
 {
@@ -35,6 +40,22 @@ PCars2_Parser::~PCars2_Parser()
     delete packetVehicleClassNamesData_;
     delete packetTimeStatsData_;
     delete packetParticipantVehicleNamesData_;
+}
+
+void PCars2_Parser::begin(void) {
+    Udp.begin(localPort);
+}
+
+void PCars2_Parser::read(void) {
+    int packetSize = Udp.parsePacket(); 
+    if (packetSize) {
+        char packetBuffer[packetSize];
+        while(Udp.available())
+       {
+        Udp.read(packetBuffer, packetSize);
+       }
+       push(packetBuffer);
+    }
 }
 
 void PCars2_Parser::push(char * receiveBuffer)

@@ -14,7 +14,7 @@ PacketParticipantsData::~PacketParticipantsData(void)
 
 void PacketParticipantsData::push(char *receiveBuffer)
 {
-    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, PARTICIPANTSDATA_BUFFER_SIZE);
+    std::memcpy(PBase::firstElementPointer(), receiveBuffer, PARTICIPANTSDATA_BUFFER_SIZE);
 }
 
 ParticipantsData PacketParticipantsData::sParticipantsData(int index)

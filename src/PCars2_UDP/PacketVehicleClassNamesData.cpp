@@ -13,7 +13,7 @@ PacketVehicleClassNamesData::~PacketVehicleClassNamesData()
 
 void PacketVehicleClassNamesData::push(char *receiveBuffer)
 {
-    std::memcpy(PBase::pointerToFirstElement(), receiveBuffer, VEHICLECLASSNAMES_BUFFER_SIZE);
+    std::memcpy(PBase::firstElementPointer(), receiveBuffer, VEHICLECLASSNAMES_BUFFER_SIZE);
 }
 
 ClassInfo PacketVehicleClassNamesData::sVehicleClassNames(int index)
