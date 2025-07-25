@@ -6,12 +6,11 @@ This program captures and parses data packets that are sent by the Project Cars 
 # Usage:
 ```C
 #include "PCars2_UDP.h"
-PCars2_Parser* parser;
+PCars2_Parser parser;
 
 void loop()
 {
-    parser = new PCars2_Parser();
-    parser->push(*buffer)
+    parser.push(*buffer)
 }
 
 ```

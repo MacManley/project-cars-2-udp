@@ -9,21 +9,20 @@ const char *Password = "Your Wifi Password";
 
 void startWiFi();
 
-PCars2_Parser* parser;
+PCars2_Parser parser;
 
 void setup() 
 { 
-  parser = new PCars2_Parser();
   Serial.begin(115200);
   startWiFi();
-  parser->begin();
+  parser.begin();
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop()
 {     
-  parser->read();
-  float speed = (parser->packetTelemetryData()->sTelemetryData().sSpeed) * 3.6;  
+  parser.read();
+  float speed = (parser.packetTelemetryData()->sTelemetryData().sSpeed) * 3.6;  
   Serial.println(speed);
 }
 
